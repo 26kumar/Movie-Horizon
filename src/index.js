@@ -9,23 +9,18 @@ import axios from 'axios';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
 
-const Api_key = `f42d3747c19e1ef06474a0ec1ace8de5`
+const API_KEY = "f42d3747c19e1ef06474a0ec1ace8de5";
 
-/**setup axios */
-axios.defaults.baseURL = "https://api.themoviedb.org/3"
-axios.defaults.headers.common['Authorization'] = `Bearer ${Api_key}`
+/** Setup axios */
+axios.defaults.baseURL = "https://api.themoviedb.org/3";
+axios.defaults.headers.common["Authorization"] = `Bearer ${API_KEY}`;
+axios.defaults.headers.common["Content-Type"] = "application/json";  // ✅ Add Content-Type header
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  // <React.StrictMode>
-    <Provider store={store}>
-          <RouterProvider router={router}/>
-    </Provider>
-  
-  // </React.StrictMode>
+  <Provider store={store}>
+    <RouterProvider router={router} />
+  </Provider>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
