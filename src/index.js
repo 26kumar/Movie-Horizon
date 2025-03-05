@@ -9,9 +9,11 @@ import axios from 'axios';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
 
+const Api_key = `f42d3747c19e1ef06474a0ec1ace8de5`
+
 /**setup axios */
 axios.defaults.baseURL = "https://api.themoviedb.org/3"
-axios.defaults.headers.common['Authorization'] = `Bearer ${process.env.REACT_APP_ACCESS_TOKEN}`
+axios.defaults.headers.common['Authorization'] = `Bearer ${Api_key}`
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
